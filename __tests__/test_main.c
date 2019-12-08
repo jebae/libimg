@@ -4,12 +4,8 @@ int		main(void)
 {
 	UNITY_BEGIN();
 	RUN_TEST_GROUP(for_each_pixel);
+	RUN_TEST_GROUP(filter);
 	test_rgb();
-	test_buffer2bmp();
-	test_buffer2jpg();
-	test_gaussian_blur();
-	test_sephia();
-	test_negative();
 	UNITY_END();
 	return (0);
 }

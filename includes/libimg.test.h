@@ -8,8 +8,5 @@
 void	test_rgb(void);
 void	test_buffer2bmp(void);
 void	test_buffer2jpg(void);
-void	test_gaussian_blur(void);
-void	test_sephia(void);
-void	test_negative(void);
 
 #endif

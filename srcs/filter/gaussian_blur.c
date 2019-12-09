@@ -80,7 +80,7 @@ int					im_gaussian_blur(
 	t_im_buffer_info	buf_info;
 
 	if (width < 7 || height < 7)
-		return (IM_SUCCESS);
+		return (im_handle_err("Image is too small to gaussian blur"));
 	buf_size = sizeof(unsigned int) * width * height;
 	if ((buf_info.buf[1] = ft_memalloc(buf_size)) == NULL)
 		return (im_handle_err("Fail to malloc buf[1]"));

@@ -24,10 +24,17 @@ SRCS = for_each_pixel.c\
 SRC_FILTER = gaussian_blur.c\
 	sephia.c\
 	negative.c\
+	gray_scale.c\
+
+SRC_EDGE_DETECT = sobel.c\
+	non_maximum_suppression.c\
+	max_gradient.c\
+	hysteresis_thresholding.c\
 
 # objs
 OBJS = $(addprefix $(OBJDIR)/,$(SRCS:.c=.o))
 OBJS += $(addprefix $(OBJDIR)/,$(SRC_FILTER:.c=.o))
+OBJS += $(addprefix $(OBJDIR)/,$(SRC_EDGE_DETECT:.c=.o))
 
 # compile objs
 HEADERS = ./$(INCDIR)/libimg.h
@@ -36,6 +43,9 @@ $(OBJDIR)/%.o : $(SRCDIR)/%.c $(HEADERS)
 	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 $(OBJDIR)/%.o : $(SRCDIR)/filter/%.c $(HEADERS)
+	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+
+$(OBJDIR)/%.o : $(SRCDIR)/edge_detect/%.c $(HEADERS)
 	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 # build

@@ -2,8 +2,9 @@
 # define LIBIMG_H
 
 # include "libft.h"
-# include <stdio.h>
+# include <stdio.h> // remove later
 # include <pthread.h>
+# include <math.h>
 
 # define IM_NUM_THREADS		1024
 # define IM_SUCCESS			0
@@ -27,11 +28,25 @@ typedef struct	s_im_buffer_info
 
 typedef struct	s_im_arg_th
 {
-	unsigned int	width;
-	unsigned int	worksize;
-	unsigned int	offset;
-	unsigned char	*buf[2];
+	unsigned int		width;
+	unsigned int		worksize;
+	unsigned int		offset;
+	unsigned char		*buf[2];
+	pthread_mutex_t		*lock;
 }				t_im_arg_th;
+
+typedef struct	s_im_th_info
+{
+	unsigned int		worksize;
+	pthread_t			tid[IM_NUM_THREADS];
+	pthread_mutex_t		lock;
+}				t_im_th_info;
+
+typedef struct	s_im_edge_gradient
+{
+	float		theta;
+	float		magnitude;
+}				t_im_edge_gradient;
 
 typedef void	(*func_th)(void *arg_void);
 
@@ -82,6 +97,37 @@ int				im_sephia(
 );
 int				im_negative(
 	unsigned int *buffer,
+	int width,
+	int height
+);
+int				im_gray_scale(
+	unsigned int *buffer,
+	int width,
+	int height
+);
+
+/*
+** edge detect
+*/
+int				im_sobel(
+	unsigned int *img_buf,
+	t_im_edge_gradient *grad_buf,
+	int width,
+	int height
+);
+int				im_non_maximum_suppression(
+	t_im_edge_gradient *grad_buf,
+	int width,
+	int height
+);
+int				im_max_gradient(
+	t_im_edge_gradient *grad_buf,
+	float *gmax,
+	int width,
+	int height
+);
+int				im_hysteresis_thresholding(
+	t_im_edge_gradient *grad_buf,
 	int width,
 	int height
 );

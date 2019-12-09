@@ -8,4 +8,5 @@ __tests__/outputs
 objs
 img_preprocessor
 dumbmain.c
+*.a
 *.dSYM

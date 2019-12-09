@@ -104,7 +104,8 @@ static void		clean_weak_edge(void *arg_void)
 int				im_hysteresis_thresholding(
 	t_im_edge_gradient *grad_buf,
 	int width,
-	int height
+	int height,
+	float *gmax
 )
 {
 	float				t[2];
@@ -112,11 +113,11 @@ int				im_hysteresis_thresholding(
 
 	if (width < 3 || height < 3)
 		return (im_handle_err("Image is too small to hysteresis thresholding"));
-	if (im_max_gradient(grad_buf, &t[0], width, height) == IM_FAIL)
+	if (im_max_gradient(grad_buf, gmax, width, height) == IM_FAIL)
 		return (IM_FAIL);
 	if ((buf_info.buf[1] = ft_memalloc(sizeof(char) * width * height)) == NULL)
 		return (im_handle_err("Fail to malloc buf[1]"));
-	t[1] = t[0] * 0.2f;
+	t[1] = *gmax * 0.2f;
 	t[0] = t[1] * 0.5f;
 	im_set_buffer_info(width, height, &buf_info);
 	buf_info.buf[0] = (unsigned char *)grad_buf;

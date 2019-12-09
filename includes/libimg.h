@@ -129,6 +129,19 @@ int				im_max_gradient(
 int				im_hysteresis_thresholding(
 	t_im_edge_gradient *grad_buf,
 	int width,
+	int height,
+	float *gmax
+);
+int				im_gradient2ratio(
+	t_im_edge_gradient *grad_buf,
+	int width,
+	int height,
+	float gmax
+);
+int				im_canny_edge_detect(
+	unsigned int *img_buf,
+	t_im_edge_gradient *grad_buf,
+	int width,
 	int height
 );
 

@@ -30,6 +30,8 @@ SRC_EDGE_DETECT = sobel.c\
 	non_maximum_suppression.c\
 	max_gradient.c\
 	hysteresis_thresholding.c\
+	gradient2hex.c\
+	canny_edge_detect.c\
 
 # objs
 OBJS = $(addprefix $(OBJDIR)/,$(SRCS:.c=.o))

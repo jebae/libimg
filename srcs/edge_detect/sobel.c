@@ -49,6 +49,8 @@ static void			filter(void *arg_void)
 		g[0] = get_gradient_x(&img_buf[i], arg->width);
 		g[1] = get_gradient_y(&img_buf[i], arg->width);
 		grad_buf[i + arg->width + 1].theta = atan(g[1] / g[0]);
+		if (ft_is_nan(grad_buf[i + arg->width + 1].theta))
+			grad_buf[i + arg->width + 1].theta = 0.0f;
 		grad_buf[i + arg->width + 1].magnitude = sqrtf(g[0] * g[0] + g[1] * g[1]);
 		if (i % arg->width >= arg->width - 3)
 			i += 3;

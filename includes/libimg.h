@@ -2,7 +2,6 @@
 # define LIBIMG_H
 
 # include "libft.h"
-# include <stdio.h> // remove later
 # include <pthread.h>
 # include <math.h>
 

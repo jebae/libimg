@@ -118,27 +118,32 @@ Each filter functions returns `IM_FAIL` if thread error or lack of memory, else 
 <br>
 
 *origin*
-<img src="https://www.dropbox.com/s/7l4l904csunjnwe/sample.png?raw=1" width="80%">
+<br>
+<img src="https://www.dropbox.com/s/7l4l904csunjnwe/sample.png?raw=1" width="50%">
 
 <br>
 
 *gaussian blur*
-<img src="https://www.dropbox.com/s/tcdbrhm5ugpafbo/gaussian_blur_test.jpg?raw=1" width="80%">
+<br>
+<img src="https://www.dropbox.com/s/tcdbrhm5ugpafbo/gaussian_blur_test.jpg?raw=1" width="50%">
 
 <br>
 
 *sephia*
-<img src="https://www.dropbox.com/s/oabqo0ed6na1sny/sephia_test.jpg?raw=1" width="80%">
+<br>
+<img src="https://www.dropbox.com/s/oabqo0ed6na1sny/sephia_test.jpg?raw=1" width="50%">
 
 <br>
 
 *negative*
-<img src="https://www.dropbox.com/s/nl4qr5ef60h5ihq/negative_test.jpg?raw=1" width="80%">
+<br>
+<img src="https://www.dropbox.com/s/nl4qr5ef60h5ihq/negative_test.jpg?raw=1" width="50%">
 
 <br>
 
 *gray scale*
-<img src="https://www.dropbox.com/s/o0hnitxgqh7vl7o/gray_scale_test.jpg?raw=1" width="80%">
+<br>
+<img src="https://www.dropbox.com/s/o0hnitxgqh7vl7o/gray_scale_test.jpg?raw=1" width="50%">
 
 <br><br>
 
@@ -168,4 +173,5 @@ typedef struct	s_im_edge_gradient
 <br>
 
 *edge detect*
-<img src="https://www.dropbox.com/s/pu1qdjg4ac913bk/canny_edge_detect_test.jpg?raw=1" width="80%">
+<br>
+<img src="https://www.dropbox.com/s/pu1qdjg4ac913bk/canny_edge_detect_test.jpg?raw=1" width="50%">
